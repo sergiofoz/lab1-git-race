@@ -25,7 +25,12 @@ class HelloControllerMVCTests {
             .andDo(print())
             .andExpect(status().isOk)
             .andExpect(view().name("welcome"))
-            .andExpect(model().attribute("message", equalTo(message)))
+            // anyOf para aceptar cualquiera de los 3 saludos temporales
+            .andExpect(model().attribute("message", anyOf(
+                equalTo("Good morning"),
+                equalTo("Good afternoon"),
+                equalTo("Good evening")
+            )))
             .andExpect(model().attribute("name", equalTo("")))
     }
     

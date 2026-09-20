@@ -21,7 +21,8 @@ class HelloControllerUnitTests {
         val view = controller.welcome(model, "")
         
         assertThat(view).isEqualTo("welcome")
-        assertThat(model.getAttribute("message")).isEqualTo("Test Message")
+        // Como el mensaje depende de la hora, comprobamos que sea uno de los 3 correctos (según la hpra del dia)
+        assertThat(model.getAttribute("message")).isIn("Good morning", "Good afternoon", "Good evening")
         assertThat(model.getAttribute("name")).isEqualTo("")
     }
     
