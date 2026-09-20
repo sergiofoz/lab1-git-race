@@ -46,6 +46,10 @@ dependencies {
     testImplementation(libs.spring.boot.starter.webmvc.test)
     testImplementation(libs.spring.boot.restclient)
     testImplementation(libs.spring.boot.resttestclient)
+
+    //Dependencias añadidas
+    implementation("org.springframework.boot:spring-boot-starter-security")
+    testImplementation("org.springframework.security:spring-security-test")
 }
 
 tasks.withType<Test> {
