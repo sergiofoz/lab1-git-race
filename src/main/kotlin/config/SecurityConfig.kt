@@ -28,6 +28,7 @@ class SecurityConfig {
             .formLogin { form ->
                 form
                     .loginPage("/login") // Le decimos que usaremos nuestro propio HTML, no el feo por defecto
+                    .loginProcessingUrl("/login")
                     .defaultSuccessUrl("/", true) // Si el login va bien, llévame al saludo
                     .permitAll()
             }
@@ -47,5 +48,11 @@ class SecurityConfig {
             }
 
         return http.build()
+    }
+
+    @Bean
+    fun passwordEncoder(): org.springframework.security.crypto.password.PasswordEncoder {
+        // BCrypt es el estándar seguro para encriptar contraseñas
+        return org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder()
     }
 }
