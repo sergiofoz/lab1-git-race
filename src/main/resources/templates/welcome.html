@@ -31,8 +31,18 @@
                 <div class="card shadow">
                     <div class="card-body text-center p-5">
                         <img class="d-block mx-auto mb-4 main-logo" src="/assets/logo.svg" alt="Universidad Zaragoza Logo">
-                        <h1 class="display-4 fw-bold text-primary mb-4">Welcome to Modern Web App</h1>
-                        <p class="lead mb-4" th:text="${message}">Hello student.</p>
+                        <h1 class="display-4 fw-bold text-primary mb-4" th:text="${message}">¡Hola, Usuario!</h1>
+
+                        <div class="lead mb-4 p-3 bg-white rounded shadow-sm border">
+                            <p class="mb-2">
+                                Has visitado esta página
+                                <strong class="text-success fs-3" th:text="${visits}">0</strong> veces.
+                            </p>
+                            <p class="mb-0">
+                                Tu rango actual es:
+                                <strong class="text-info" th:text="${rank}">Ninguno</strong>
+                            </p>
+                        </div>
                         
                         <!-- HTTP Debug Section -->
                         <div class="row mt-4">

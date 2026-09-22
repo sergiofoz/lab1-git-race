@@ -13,5 +13,8 @@ class UserAccount(
     val username: String = "", // Asignamos un valor por defecto
 
     @Column(nullable = false)
-    val passwordHash: String = "" // Quitamos el '?' (no debería ser nulo) y asignamos por defecto
+    val passwordHash: String = "", // Asignamos valor por defecto
+
+    @Column(nullable = false)
+    var visits: Int = 0 // Aqui es var, porque es variable el valor de visitas, cada vez que entre se va a modificar
 )
